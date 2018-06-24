@@ -11,9 +11,9 @@ _This is a class project to display a variety of results based on inputted numbe
 
 ## Specifications
 
-_Numbers divisible by 3 are replaced with "Ping"
-_Numbers divisible by 5 are replaced with "Pong"
-_Numbers divisible by 15 are replaced with "Ping Pong"_
+* _Numbers divisible by 3 are replaced with "Ping"_
+* _Numbers divisible by 5 are replaced with "Pong"_
+* _Numbers divisible by 15 are replaced with "Ping Pong"_
 
 ## Setup/Installation Requirements
 

@@ -1,22 +1,28 @@
-//Business Logic
-var emptyArray = []
+$(document).ready(function() {
 
-var business = function(number) {
-  if (isNaN(number)) {
-    alert("Enter a number!");
-  } else 
+//Business Logic
+var bizLogic = function(number) {
+  if ((number % 3 === 0)) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
 
 //UI Logic
-$(document).ready(function() {
 
   $("form#ping").submit(function(event) {
     event.preventDefault();
 
-    var number = $('input#number').val();
+    var number = parseInt($("input#number").val());
+    var result = bizLogic(number);
 
-    if ((number % 3 === 0))
-      alert("Yes!");
-    });
-  console.log(number);
+    if (result === true) {
+      $("#result").text("Yes!");
+    } else {
+      $(".result").text("NOPE!");
+    }
+    console.log(result);
   });
-};
+});

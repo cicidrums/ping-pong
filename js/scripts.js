@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 //Business Logic
 var bizLogic = function(number) {
-  if ((number % 3 === 0)) {
+  if ((number % 3 === 0) || (number % 5 === 0) || (number % 15 ===0)) {
     return true;
   } else {
     return false;
@@ -19,7 +19,7 @@ var bizLogic = function(number) {
     var result = bizLogic(number);
 
     if (result === true) {
-      $("#result").text("Yes!");
+      $("#result").append("Ping");
     } else {
       $(".result").text("NOPE!");
     }

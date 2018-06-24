@@ -1,8 +1,17 @@
 $(document).ready(function() {
 
 //Business Logic
-var bizLogic = function(number) {
-  if ((number % 3 === 0) || (number % 5 === 0) || (number % 15 ===0)) {
+var ping = function(number) {
+  if ((number % 3 === 0)) {
+    return true;
+  } else {
+    return false;
+  }
+};
+//|| (number % 5 === 0) || (number % 15 ===0))//
+
+var pong = function(number) {
+  if ((number % 5 === 0)) {
     return true;
   } else {
     return false;
@@ -16,13 +25,18 @@ var bizLogic = function(number) {
     event.preventDefault();
 
     var number = parseInt($("input#number").val());
-    var result = bizLogic(number);
+    var result1 = ping(number);
+    var result2 = pong(number);
 
-    if (result === true) {
+    if (result1 === true) {
       $("#result").append("Ping");
     } else {
-      $(".result").text("NOPE!");
     }
-    console.log(result);
+
+    if (result2 === true) {
+      $("#result").append("Pong");
+    } else {
+    }
+
   });
 });

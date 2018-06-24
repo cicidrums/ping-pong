@@ -49,6 +49,9 @@ var pingPong = function(number) {
       $("#result").append("Ping Pong" + " ");
     } else {
     }
-    
+
+    if ((result1 !== true) && (result2 !== true)) {
+      alert("Keep trying!")
+    }
   });
 });

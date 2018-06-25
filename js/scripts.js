@@ -53,8 +53,7 @@ var pingPong = function(number) {
       numArray.push(index);
       result = index;
     }
-    $("#result").append(index + " ");
-    console.log(numArray);
+    $("#result").append(result + " ");
     }
-});
+  });
 });

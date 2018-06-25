@@ -1,6 +1,9 @@
 $(document).ready(function() {
 
 //Business Logic
+var emptyArray = [];
+var numArray = [];
+
 var ping = function(number) {
   if ((number % 3 === 0)) {
     return true;
@@ -25,38 +28,33 @@ var pingPong = function(number) {
   }
 };
 
-
 //UI Logic
   $("form#ping").submit(function(event) {
     event.preventDefault();
 
-    var emptyArray = []
     var total = 0;
-    var countTo = parseInt($("input#number").val());
-    var countBy = parseInt($([result1, result2, result3]));
     var number = parseInt($("input#number").val());
-    var result1 = ping(number);
-    var result2 = pong(number);
-    var result3 = pingPong(number);
-    var countingNumber = Math.floor(countTo/countBy);
 
-    if (result1 === true) {
-    $("#result").append("Ping" + " ");
+    for (index = 1; index <= number; index += 1) {
+    if (index % 3 === 0) {
+      emptyArray.push("Ping");
+      numArray.push("Ping" + " ");
+      result = ("Ping" + " ");
+    } else if (index % 5 === 0) {
+      emptyArray.push(index);
+      numArray.push("Pong" + " ");
+      result = ("Pong" + " ");
+    } else if (index % 15 === 0) {
+      emptyArray.push(index);
+      numArray.push("Ping Pong" + " ");
+      result = ("Ping Pong" + " ");
     } else {
+      emptyArray.push(index);
+      numArray.push(index);
+      result = index;
     }
-
-    if (result2 === true) {
-    $("#result").append("Pong" + " ");
-    } else {
-    }
-
-    if (result3 === true) {
-    $("#result").append("Ping Pong" + " ");
-    } else {
-    }
-
-    if ((result1 !== true) && (result2 !== true)) {
-    alert("Keep trying!")
+    $("#result").append(index + " ");
+    console.log(numArray);
     }
 });
 });

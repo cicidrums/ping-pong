@@ -39,7 +39,5 @@ $(document).ready(function() {
     $("#result").empty();
     bizLogic(number);
 
-
-//numArray.forEach(function(inputFromArray){ $("#result").append("<li>" + inputFromArray + "</li>") });
   });
 });

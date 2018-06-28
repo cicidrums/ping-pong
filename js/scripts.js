@@ -1,59 +1,44 @@
-$(document).ready(function() {
+
 
 //Business Logic
 var emptyArray = [];
 var numArray = [];
-
-var ping = function(number) {
-  if ((number % 3 === 0)) {
-    return true;
+var bizLogic = function(number) {
+  for (index = 1; index <= number; index += 1) {
+    if (index % 15 === 0) {
+    emptyArray.push(index);
+    numArray.push("Ping Pong" + " ");
+    result = ("Ping Pong" + " ");
+  } else if (index % 5 === 0) {
+    emptyArray.push(index);
+    numArray.push("Pong" + " ");
+    result = ("Pong" + " ");
+  } else if (index % 3 === 0) {
+    emptyArray.push(index);
+    numArray.push("Ping" + " ");
+    result = ("Ping" + " ");
   } else {
-    return false;
+    emptyArray.push(index);
+    numArray.push(index);
+    result = index;
   }
-};
-
-var pong = function(number) {
-  if ((number % 5 === 0)) {
-    return true;
-  } else {
-    return false;
+  $("#result").append("<li>" + result + "</li>");
   }
-};
-
-var pingPong = function(number) {
-  if ((number % 15 === 0)) {
-    return true;
-  } else {
-    return false;
-  }
-};
+}
 
 //UI Logic
+$(document).ready(function() {
   $("form#ping").submit(function(event) {
     event.preventDefault();
-
-    var total = 0;
     var number = parseInt($("input#number").val());
 
-    for (index = 1; index <= number; index += 1) {
-    if (index % 3 === 0) {
-      emptyArray.push("Ping");
-      numArray.push("Ping" + " ");
-      result = ("Ping" + " ");
-    } else if (index % 5 === 0) {
-      emptyArray.push(index);
-      numArray.push("Pong" + " ");
-      result = ("Pong" + " ");
-    } else if (index % 15 === 0) {
-      emptyArray.push(index);
-      numArray.push("Ping Pong" + " ");
-      result = ("Ping Pong" + " ");
-    } else {
-      emptyArray.push(index);
-      numArray.push(index);
-      result = index;
-    }
-    $("#result").append(result + " ");
-    }
+    numArray.forEach(function(number){
+    $("#result").append("<li>" + number + "</li>") });
+
+    //callback function
+    bizLogic(number);
+
+
+//numArray.forEach(function(inputFromArray){ $("#result").append("<li>" + inputFromArray + "</li>") });
   });
 });

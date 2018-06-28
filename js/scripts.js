@@ -32,10 +32,11 @@ $(document).ready(function() {
     event.preventDefault();
     var number = parseInt($("input#number").val());
 
-    numArray.forEach(function(number){
-    $("#result").append("<li>" + number + "</li>") });
+    /*numArray.forEach(function(number){
+    $("#result").append("<li>" + number + "</li>") });*/
 
     //callback function
+    $("#result").empty();
     bizLogic(number);
 
 
